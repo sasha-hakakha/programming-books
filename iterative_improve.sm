@@ -1,0 +1,6 @@
+#lang sicp
+
+(define (iterative_improve good_enough? improve f input)
+  (if (good_enough? input)
+      f
+      (iterative_improve good_enough? improve (improve f) input)))
