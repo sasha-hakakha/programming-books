@@ -1,0 +1,11 @@
+#lang sicp
+
+(define (calc_fixed_point f x prev thresh)
+  (if (< thresh(abs(- x prev)))
+      x
+      (calc_fixed_point f (f x) x thresh)))
+
+(define (fixed_point f x thresh)
+  (calc_fixed_point f (f x) x thresh))
+
+(fixed_point cos 0.75 0.00001)
