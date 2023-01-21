@@ -1,0 +1,16 @@
+#lang sicp
+(define (change sum)
+  (define result 0)
+  (do ((quarters 0 (+ quarters 1)))
+      ((= quarters 5))
+       (do ((dimes 0 (+ dimes 1)))
+             ((= dimes 11))
+             (do ((nickles 0 (+ nickles 1)))
+                  ((= nickles 21))
+                 (do ((pennies 0 (+ pennies 1)))
+                      ((= pennies 101))
+                       (if  (= (+ (* pennies 1) (* nickles 5) (* dimes 10) (* quarters 25)) sum)
+                            (set! result(+ result 1)))))))
+   result)
+
+(change 100)
