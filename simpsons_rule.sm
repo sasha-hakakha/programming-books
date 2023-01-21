@@ -1,0 +1,26 @@
+#lang sicp
+
+(define (y_k a k h)
+  (+ (a (* k h))))
+
+(define (find_prefix x)
+  (cond
+   [(= x 0) 1]
+   [(= x n) 1]
+   [(even? x) 2]
+   [else 4]))
+
+(define (find_h a b n)
+  (/ ( - (b a) n)))
+
+(define (simpson f a b n)
+  (define current 0)
+  (define h (find_h a b n))
+
+  (do ((i 0 (+ i 1)))
+      ((= i (+ n 1)))
+    (+ current
+       (* (find_prefix i)
+          (f 
+           (y_k a i h)))))
+  current)
