@@ -1,0 +1,15 @@
+(define (make_point x y)
+  (cons x y))
+
+(define (select_x x)
+  (car x))
+
+(define (select_y x)
+  (cdr x))
+
+(define (get_midpoint a b)
+  (make_point (/(select_x a)
+                (select_x b)2)
+              (/(select_y a)
+                (select_y b) 2)))
+  

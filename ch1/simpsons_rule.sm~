@@ -1,0 +1,13 @@
+#lang sicp
+
+(define (y_k a k h)
+  (+ (a (* k h))))
+
+(define (find_prefix x)
+  (cond
+   [(= x 0) 1]
+   [(= x n) 1]
+   [(even? x) 2]
+   [else 4]))
+  
+(define (simpson f a b n)

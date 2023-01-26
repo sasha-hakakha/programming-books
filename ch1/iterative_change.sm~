@@ -1,0 +1,28 @@
+#lang sicp
+(define (change sum)
+  (define result 0)
+  (define current 0)
+
+    (while(<= quarters 4)
+        (while(<= dimes 10)
+            (while(<= nickles 20)
+                    (while(<= pennies 100)
+                        (= current (+ current 1))
+                        (if (= current sum)
+                            (= result (+ result 1))))
+                    (= current(- current 100))
+                    (= current (+ current 25))
+                    (if (= current sum)
+                        (= result (+ result 1))))
+            (= current(- current 100))
+
+            (= current (+ current 10))
+            (if (= current sum)
+                (= result (+ result 1))))
+        (= current (- current 100))
+        (= current (+ current 25))
+        (if (= current sum)
+            (= result (+ result 1))))
+    result)
+
+(change 100)
