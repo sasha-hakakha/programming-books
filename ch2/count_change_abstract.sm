@@ -1,0 +1,11 @@
+#lang sicp
+(define (abstract-count coins amount acc)
+  (if (null? coins) acc
+      (let ((value (car coins)))
+      	(cond ((= amount 0) (+ 1 acc))
+      	      ((< amount 0) acc)
+              (else (+ (abstract-count coins (- amount value) acc)
+                    (abstract-count (cdr coins) amount
+                                        acc)))))))
+
+(abstract-count (list 1 5 10 25) 100 0)
